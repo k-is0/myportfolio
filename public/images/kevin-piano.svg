@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1200" preserveAspectRatio="xMidYMid slice">
+  <rect width="1800" height="1200" fill="#111"/>
+  <g fill="#ffffff" opacity="0.9">
+    <rect x="300" y="820" width="180" height="300"/>
+    <rect x="484" y="820" width="180" height="300"/>
+    <rect x="668" y="820" width="180" height="300"/>
+    <rect x="852" y="820" width="180" height="300"/>
+    <rect x="1036" y="820" width="180" height="300"/>
+    <rect x="1220" y="820" width="180" height="300"/>
+    <rect x="1404" y="820" width="180" height="300"/>
+  </g>
+  <g fill="#111">
+    <rect x="440" y="820" width="80" height="190"/>
+    <rect x="624" y="820" width="80" height="190"/>
+    <rect x="992" y="820" width="80" height="190"/>
+    <rect x="1176" y="820" width="80" height="190"/>
+    <rect x="1360" y="820" width="80" height="190"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-width="1" opacity="0.35">
+    <line x1="0" y1="820" x2="1800" y2="820"/>
+    <line x1="0" y1="1120" x2="1800" y2="1120"/>
+  </g>
+  <text x="900" y="140" text-anchor="middle" fill="#ffffff" opacity="0.55" font-family="Helvetica, Arial, sans-serif" font-size="30" letter-spacing="6">CANDID · 3:2</text>
+</svg>

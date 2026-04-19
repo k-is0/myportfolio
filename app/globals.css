@@ -106,6 +106,27 @@ a {
   font-weight: 500;
 }
 
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.75rem 1rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-size: var(--text-meta);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  z-index: 100;
+  transform: translateY(-120%);
+  transition: transform 150ms ease-out;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: none;
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 260ms;

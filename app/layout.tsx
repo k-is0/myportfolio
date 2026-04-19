@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Cursor from "@/components/Cursor";
 import SmoothScroll from "@/components/SmoothScroll";
+import MotionProvider from "@/components/MotionProvider";
 import { profile } from "@/content/profile";
 
 export const metadata: Metadata = {
@@ -36,13 +37,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SmoothScroll />
-        <Cursor />
-        <Nav />
-        <main id="top" className="pt-[var(--nav-height)]">
-          {children}
-        </main>
-        <Footer />
+        <MotionProvider>
+          <a href="#top" className="skip-link">
+            Skip to content
+          </a>
+          <SmoothScroll />
+          <Cursor />
+          <Nav />
+          <main id="top" className="pt-[var(--nav-height)] scroll-mt-[var(--nav-height)]">
+            {children}
+          </main>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

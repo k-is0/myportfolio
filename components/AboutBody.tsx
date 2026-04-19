@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 import { about } from "@/content/about";
 
@@ -33,20 +34,62 @@ function MetaList({
 }
 
 export default function AboutBody({ className = "" }: { className?: string }) {
+  const { portrait, candid } = about.photos;
   return (
     <div className={`grid grid-cols-12 gap-x-6 gap-y-16 ${className}`}>
       <div className="col-span-12 md:col-span-7 space-y-8">
-        {about.paragraphs.map((p, i) => (
+        {about.paragraphs.slice(0, 2).map((p, i) => (
           <Reveal key={i} delay={i * 0.08}>
             <p className="text-body max-w-[60ch] first:text-h3 first:max-w-[42ch]">
               {p}
             </p>
           </Reveal>
         ))}
+
+        <Reveal delay={0.12}>
+          <figure className="my-4 -ml-[var(--edge-gutter)] md:ml-0 md:-mr-[calc(var(--edge-gutter)/2)]">
+            <div className="relative bg-[var(--color-ink)] overflow-hidden" style={{ aspectRatio: "3 / 2" }}>
+              <Image
+                src={candid.src}
+                alt={candid.alt}
+                fill
+                sizes="(min-width: 768px) 58vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="caption text-[var(--color-muted)] mt-3 px-[var(--edge-gutter)] md:px-0">
+              {candid.caption}
+            </figcaption>
+          </figure>
+        </Reveal>
+
+        {about.paragraphs.slice(2).map((p, i) => (
+          <Reveal key={`p-${i + 2}`} delay={0.05}>
+            <p className="text-body max-w-[60ch]">{p}</p>
+          </Reveal>
+        ))}
       </div>
 
       <aside className="col-span-12 md:col-span-5 md:col-start-9 space-y-12">
         <Reveal>
+          <figure>
+            <div className="relative bg-[var(--color-ink)] overflow-hidden" style={{ aspectRatio: "4 / 5" }}>
+              <Image
+                src={portrait.src}
+                alt={portrait.alt}
+                fill
+                sizes="(min-width: 768px) 38vw, 100vw"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <figcaption className="caption text-[var(--color-muted)] mt-3">
+              {portrait.caption}
+            </figcaption>
+          </figure>
+        </Reveal>
+
+        <Reveal delay={0.08}>
           <div>
             <p className="caption text-[var(--color-muted)] pb-4 border-b border-[var(--color-rule)]">
               Now
@@ -68,15 +111,15 @@ export default function AboutBody({ className = "" }: { className?: string }) {
           </div>
         </Reveal>
 
-        <Reveal delay={0.08}>
+        <Reveal delay={0.16}>
           <MetaList title="Education" rows={about.education} />
         </Reveal>
 
-        <Reveal delay={0.16}>
+        <Reveal delay={0.24}>
           <MetaList title="Performance" rows={about.performances} />
         </Reveal>
 
-        <Reveal delay={0.24}>
+        <Reveal delay={0.32}>
           <div>
             <p className="caption text-[var(--color-muted)] pb-4 border-b border-[var(--color-rule)]">
               Tools

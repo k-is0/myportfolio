@@ -16,7 +16,6 @@ export default function ProjectCard({ project, index }: Props) {
     <Link
       href={`/work/${slug}`}
       className="group block"
-      aria-label={`${title} — ${descriptor}`}
       data-cursor="hover"
     >
       <ViewTransition name={`project-${slug}`} share="morph">
@@ -51,7 +50,7 @@ export default function ProjectCard({ project, index }: Props) {
 
       <div className="mt-6">
         <div className="flex items-baseline justify-between gap-4">
-          <h3 className="text-h3">
+          <h2 className="text-h3">
             <span className="relative inline-block">
               {title}
               <span
@@ -59,7 +58,7 @@ export default function ProjectCard({ project, index }: Props) {
                 className="absolute left-0 -bottom-0.5 h-px w-full bg-current origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"
               />
             </span>
-          </h3>
+          </h2>
           <span className="caption text-[var(--color-muted)] tabular-nums">
             {year}
           </span>

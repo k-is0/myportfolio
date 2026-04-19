@@ -9,7 +9,7 @@ import PianoMark from "./PianoMark";
 const NAV_LINKS = [
   { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
-  { href: "/index", label: "Index" },
+  { href: "/archive", label: "Index" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -59,8 +59,11 @@ export default function Nav() {
               <li key={href}>
                 <Link
                   href={href}
-                  className="caption transition-colors duration-200 hover:text-[var(--color-accent)]"
-                  style={{ color: active ? "var(--color-accent)" : undefined }}
+                  className={`caption transition-colors duration-200 hover:text-[var(--color-accent)] ${
+                    active
+                      ? "relative text-[var(--color-ink)] after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-px after:bg-[var(--color-ink)]"
+                      : "text-[var(--color-muted)]"
+                  }`}
                   aria-current={active ? "page" : undefined}
                 >
                   {label}

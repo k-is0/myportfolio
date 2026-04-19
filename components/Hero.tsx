@@ -7,10 +7,10 @@ import Highlight from "./Highlight";
 import { EASE_OUT_EDITORIAL } from "@/lib/motion";
 
 const STAGGER = 0.06;
-const DURATION = 0.8;
+const DURATION = 0.6;
 
 const fadeUp = (i: number) => ({
-  initial: { y: 18, opacity: 0 },
+  initial: { y: 14, opacity: 1 },
   animate: { y: 0, opacity: 1 },
   transition: {
     duration: DURATION,
@@ -35,13 +35,12 @@ export default function Hero() {
       </div>
 
       <div className="py-12">
-        <motion.h1
-          {...fadeUp(1)}
+        <h1
           className="text-display leading-[0.9]"
           style={{ viewTransitionName: "wordmark" }}
         >
           {profile.shortName}
-        </motion.h1>
+        </h1>
 
         <motion.div
           {...fadeUp(3)}

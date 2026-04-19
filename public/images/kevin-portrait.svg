@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" preserveAspectRatio="xMidYMid slice">
+  <rect width="1200" height="1500" fill="#111"/>
+  <g fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.4">
+    <circle cx="600" cy="560" r="180"/>
+    <path d="M 360 1180 Q 600 860 840 1180 L 840 1500 L 360 1500 Z"/>
+    <line x1="0" y1="1180" x2="1200" y2="1180"/>
+  </g>
+  <text x="600" y="1420" text-anchor="middle" fill="#ffffff" opacity="0.55" font-family="Helvetica, Arial, sans-serif" font-size="30" letter-spacing="6">PORTRAIT · 4:5</text>
+</svg>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import type { CSSProperties, ReactNode } from "react";
 import { EASE_IN_OUT_EDITORIAL } from "@/lib/motion";
 
@@ -27,7 +27,9 @@ export default function Highlight({
   duration = 0.7,
   className = "",
 }: HighlightProps) {
-  if (!animated) {
+  const reduced = useReducedMotion();
+
+  if (!animated || reduced) {
     return (
       <span
         className={`bg-[var(--color-ink)] text-[var(--color-paper)] ${className}`}

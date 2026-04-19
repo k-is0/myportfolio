@@ -1,8 +1,8 @@
 export const about = {
   paragraphs: [
-    "Currently finishing an MSc in Design Engineering at Imperial's Dyson School, specialising in cleantech hardware. The thesis is on ultrasonic microplastic separation — a resonant acoustic field that sorts particles from water without filters. Before that, integrated design engineering at Bath, where I modelled the flight dynamics of a tiltrotor eVTOL from first principles.",
-    "Between degrees I was one of the founding hardware engineers on My Little Beacon — a GSM emergency-call device for children who don't carry phones. PCB design, firmware, enclosure; the kind of product that teaches you what design-for-manufacture actually costs.",
-    "The other half of the CV is music. ARSM performance diploma, recitals at the Royal Albert Hall and Westminster Abbey. The two practices inform each other more than people assume — both reward patience with detail, and both punish handwaving.",
+    "Currently finishing an MSc in Design Engineering at Imperial's Dyson School, specialising in cleantech hardware. The thesis is on ultrasonic microplastic separation, a resonant acoustic field that sorts particles from water without filters. Before that, integrated design engineering at Bath, where I modelled the flight dynamics of a tiltrotor eVTOL from first principles.",
+    "Between degrees I was one of the founding hardware engineers on My Little Beacon: a GSM emergency-call device for children who don't carry phones. PCB design, firmware, enclosure; the kind of product that teaches you what design-for-manufacture actually costs.",
+    "The other half of the CV is music. ARSM performance diploma, recitals at the Royal Albert Hall and Westminster Abbey. The two practices inform each other more than people assume, both reward patience with detail, and both punish handwaving.",
   ],
   now: [
     "Writing up the MSc thesis on ultrasonic microplastic separation.",
@@ -40,4 +40,20 @@ export const about = {
     "ROS",
     "TypeScript",
   ],
+  photos: {
+    portrait: {
+      src: "/images/kevin-portrait.svg",
+      alt: "Portrait of Kevin",
+      width: 1200,
+      height: 1500,
+      caption: "London, 2026",
+    },
+    candid: {
+      src: "/images/kevin-piano.svg",
+      alt: "Kevin at the piano",
+      width: 1800,
+      height: 1200,
+      caption: "Elgar Room rehearsal, Royal Albert Hall",
+    },
+  },
 } as const;
