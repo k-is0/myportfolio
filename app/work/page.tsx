@@ -18,7 +18,7 @@ export default function WorkPage() {
         label="Selected work"
         heading={
           <>
-            Six projects at the intersection of engineering, design, and{" "}
+            Seven projects at the intersection of engineering, design, and{" "}
             <Highlight animated delay={0.55}>performance</Highlight>.
           </>
         }

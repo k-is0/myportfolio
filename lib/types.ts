@@ -4,7 +4,12 @@ export type PlaceholderPattern =
   | "wireframe"
   | "curve"
   | "lattice"
-  | "grip";
+  | "grip"
+  | "pulse"
+  | "keys"
+  | "steps"
+  | "radial"
+  | "cascade";
 
 export type CardLayout = {
   span: 4 | 5 | 6 | 7 | 8 | 12;

@@ -88,8 +88,8 @@ export const projects: Project[] = [
     tools: ["Figma", "Data visualisation", "User testing"],
     cover: {
       kind: "placeholder",
-      pattern: "curve",
-      alt: "A hand-drawn data curve suggesting a biosignal readout",
+      pattern: "pulse",
+      alt: "A hand-drawn waveform suggesting a bio-signal trace",
     },
     layout: { span: 5, aspect: "4 / 5" },
     featured: true,
@@ -165,6 +165,38 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "smart-acl-rehab-sleeve",
+    title: "Smart ACL Rehabilitation Sleeve",
+    year: 2025,
+    category: "Medtech / Wearables",
+    descriptor:
+      "Wireless-charged wearable for post-surgery knee rehabilitation, built to EU MDR.",
+    role: "Group project — embedded + mechanical",
+    client: "Imperial College London",
+    tools: ["EU MDR", "Embedded firmware", "Wireless power", "Soft goods"],
+    cover: {
+      kind: "placeholder",
+      pattern: "curve",
+      alt: "Anatomical bezier curve suggesting a knee profile",
+    },
+    layout: { span: 5, aspect: "4 / 5" },
+    featured: true,
+    body: [
+      {
+        kind: "para",
+        text: "Post-surgery ACL rehab is a long game: six months of targeted loading, carefully measured range of motion, strength progression across defined phases. The sleeve monitors flexion angle, compression pressure, and quad activation, and nudges the wearer when the prescribed exercise drifts out of spec.",
+      },
+      {
+        kind: "quote",
+        text: "A rehab device that's uncomfortable doesn't get worn. A rehab device that isn't worn doesn't exist.",
+      },
+      {
+        kind: "para",
+        text: "Everything was sized against EU MDR Class IIa, which meant IEC 60601 for electrical safety, ISO 10993 for biocompatibility, and a traceability matrix that kept pace with the hardware revisions. The wireless charger was the easy part.",
+      },
+    ],
+  },
+  {
     slug: "dfam-tpu-flip-flop",
     title: "DfAM TPU Flip Flop",
     year: 2025,
@@ -179,7 +211,7 @@ export const projects: Project[] = [
       pattern: "lattice",
       alt: "Hexagonal honeycomb lattice suggesting a gyroid cell pattern",
     },
-    layout: { span: 8, aspect: "16 / 9" },
+    layout: { span: 7, aspect: "4 / 5" },
     featured: true,
     body: [
       {
@@ -204,8 +236,8 @@ export const projects: Project[] = [
     tools: ["Teaching", "Online lesson delivery", "Client relationships"],
     cover: {
       kind: "placeholder",
-      pattern: "beacon",
-      alt: "Radiating lines suggesting a signal reaching outward",
+      pattern: "steps",
+      alt: "Ascending bars suggesting graded progression",
     },
     layout: { span: 6, aspect: "4 / 5" },
     featured: false,
@@ -231,8 +263,8 @@ export const projects: Project[] = [
     tools: ["Solo recital", "Chamber performance", "Orchestral percussion"],
     cover: {
       kind: "placeholder",
-      pattern: "rings",
-      alt: "Concentric rings suggesting resonance",
+      pattern: "keys",
+      alt: "A row of piano keys",
     },
     layout: { span: 6, aspect: "4 / 5" },
     featured: false,
@@ -258,8 +290,8 @@ export const projects: Project[] = [
     tools: ["Structured forms", "Long-horizon practice"],
     cover: {
       kind: "placeholder",
-      pattern: "grip",
-      alt: "Two arcs suggesting held form",
+      pattern: "radial",
+      alt: "A radial compass figure suggesting structured forms",
     },
     layout: { span: 6, aspect: "4 / 5" },
     featured: false,
@@ -286,8 +318,8 @@ export const projects: Project[] = [
     tools: ["Event production", "Budgeting", "Vendor coordination"],
     cover: {
       kind: "placeholder",
-      pattern: "curve",
-      alt: "Overlapping curves suggesting movement",
+      pattern: "cascade",
+      alt: "Offset diagonal strokes suggesting rhythm",
     },
     layout: { span: 6, aspect: "4 / 5" },
     featured: false,

@@ -1,12 +1,13 @@
 export const about = {
   paragraphs: [
-    "Currently finishing an MSc in Design Engineering at Imperial's Dyson School, specialising in cleantech hardware. The thesis is on ultrasonic microplastic separation, a resonant acoustic field that sorts particles from water without filters. Before that, integrated design engineering at Bath, where I modelled the flight dynamics of a tiltrotor eVTOL from first principles.",
-    "Between degrees I was one of the founding hardware engineers on My Little Beacon: a GSM emergency-call device for children who don't carry phones. PCB design, firmware, enclosure; the kind of product that teaches you what design-for-manufacture actually costs.",
-    "The other half of the CV is music. ARSM performance diploma, recitals at the Royal Albert Hall and Westminster Abbey. The two practices inform each other more than people assume, both reward patience with detail, and both punish handwaving.",
+    "Currently finishing an MSc in Design Engineering at Imperial's Dyson School, specialising in Cleantech Innovation. The thesis is on ultrasonic microplastic separation — a resonant acoustic field that sorts particles from water without filters. Before Imperial, BEng Design Engineering at Bath, graduating 2:1 with a MATLAB/Simulink mission simulation for an electric VTOL flying emergency medical response.",
+    "Across internships and coursework, I've taken hardware from simulation to working product in cleantech, embedded systems, and advanced manufacturing. Currently the embedded lead at My Little Beacon, bringing up the audio chain and cellular stack on a compact GSM device for children. Before that, UI/UX engineer on a real-time bio-impedance hydration dashboard adopted as the reference interface for pilot trials, and five years running an independent piano tuition practice that I handed on at graduation.",
+    "The other half of the story is music. ARSM performance diploma, public performances at the Royal Albert Hall, Westminster Abbey, and St Margaret's; a decade-plus on piano and percussion. The two practices reward patience with detail, and punish handwaving.",
   ],
   now: [
     "Writing up the MSc thesis on ultrasonic microplastic separation.",
-    "Available for new project work from June 2026.",
+    "Embedded lead on the My Little Beacon pre-production prototype.",
+    "Open to an 8-week placement in venture, product, or strategy work from June 2026.",
     "Based in London; comfortable working remotely.",
   ],
   education: [
@@ -16,28 +17,69 @@ export const about = {
       where: "Imperial College London · Dyson School",
     },
     {
-      period: "2022 - 2025",
-      label: "BEng Integrated Design Engineering",
+      period: "2022 — 2025",
+      label: "BEng Design Engineering (Hons) — 2:1",
       where: "University of Bath",
+    },
+    {
+      period: "2020 — 2022",
+      label: "A Levels — Maths A*, Further Maths A*, Physics A, Economics B",
+      where: "Harris Westminster Sixth Form",
+    },
+  ],
+  experience: [
+    {
+      period: "2025 — present",
+      label: "Hardware Engineer (Embedded lead)",
+      where: "My Little Beacon",
+    },
+    {
+      period: "2025",
+      label: "UI/UX Engineer",
+      where: "Smart Hydration Group",
+    },
+    {
+      period: "2020 — 2025",
+      label: "Founder — Private Piano Tuition Practice",
+      where: "Self-directed · London & Bath",
+    },
+    {
+      period: "2024 — 2025",
+      label: "Mechanical Design Engineer",
+      where: "Mechatronics project · University of Bath",
     },
   ],
   performances: [
-    { period: "2024", label: "Elgar Room", where: "Royal Albert Hall" },
-    { period: "2023", label: "Recital", where: "Westminster Abbey" },
+    {
+      period: "2014 — present",
+      label: "Concert Pianist · Percussion Ensemble",
+      where: "Royal Albert Hall · Westminster Abbey · St Margaret's",
+    },
     {
       period: "2019",
       label: "ARSM Performance Diploma",
       where: "Royal Schools of Music",
     },
+    {
+      period: "2023 — 2025",
+      label: "Events Manager · Social Secretary",
+      where: "Bath Streetdance Society",
+    },
+    {
+      period: "2009 — 2016",
+      label: "Shaolin Martial Arts",
+      where: "London & Beijing",
+    },
   ],
   tools: [
-    "COMSOL Multiphysics",
-    "MATLAB / Simulink",
-    "KiCad",
-    "nTopology",
     "Fusion 360",
-    "Rhino + Grasshopper",
-    "ROS",
+    "KiCad",
+    "STM32 · Embedded C / C++",
+    "MATLAB · Simulink",
+    "Python",
+    "DfAM · 3D printing",
+    "Figma",
+    "Git",
     "TypeScript",
   ],
   photos: {

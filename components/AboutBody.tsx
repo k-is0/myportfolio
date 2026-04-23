@@ -115,14 +115,18 @@ export default function AboutBody({ className = "" }: { className?: string }) {
           <MetaList title="Education" rows={about.education} />
         </Reveal>
 
+        <Reveal delay={0.2}>
+          <MetaList title="Experience" rows={about.experience} />
+        </Reveal>
+
         <Reveal delay={0.24}>
-          <MetaList title="Performance" rows={about.performances} />
+          <MetaList title="Practice" rows={about.performances} />
         </Reveal>
 
         <Reveal delay={0.32}>
           <div>
             <p className="caption text-[var(--color-muted)] pb-4 border-b border-[var(--color-rule)]">
-              Tools
+              Toolkit
             </p>
             <ul className="flex flex-wrap gap-x-5 gap-y-2 pt-4">
               {about.tools.map((t) => (

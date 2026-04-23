@@ -20,6 +20,11 @@ export default function ProjectPlaceholder({ pattern, className = "" }: Props) {
       {pattern === "curve" && <Curve />}
       {pattern === "lattice" && <Lattice />}
       {pattern === "grip" && <Grip />}
+      {pattern === "pulse" && <Pulse />}
+      {pattern === "keys" && <Keys />}
+      {pattern === "steps" && <Steps />}
+      {pattern === "radial" && <Radial />}
+      {pattern === "cascade" && <Cascade />}
     </svg>
   );
 }
@@ -154,6 +159,175 @@ function Grip() {
       <g strokeWidth={0.4} opacity={0.5} strokeDasharray="2 4">
         <line x1={200} y1={30} x2={200} y2={470} />
       </g>
+    </g>
+  );
+}
+
+function Pulse() {
+  return (
+    <g fill="none" stroke={paper}>
+      <g strokeWidth={0.4} opacity={0.3} strokeDasharray="2 4">
+        <line x1={20} y1={180} x2={380} y2={180} />
+        <line x1={20} y1={250} x2={380} y2={250} />
+        <line x1={20} y1={320} x2={380} y2={320} />
+      </g>
+      <path
+        d="M 20 250 L 90 250 L 100 240 L 110 250 L 155 250 L 165 175 L 175 325 L 185 220 L 195 250 L 260 250 L 270 235 L 280 250 L 380 250"
+        strokeWidth={0.9}
+      />
+      <path
+        d="M 20 400 Q 100 380, 200 400 T 380 400"
+        strokeWidth={0.5}
+        opacity={0.35}
+      />
+      <circle cx={165} cy={175} r={2.5} fill={paper} stroke="none" />
+      <circle cx={175} cy={325} r={2} fill={paper} stroke="none" />
+    </g>
+  );
+}
+
+function Keys() {
+  const whiteCount = 8;
+  const whiteW = 42;
+  const whiteH = 280;
+  const y0 = 110;
+  const x0 = (400 - whiteW * whiteCount) / 2;
+  const blackAfter = [0, 1, 3, 4, 5];
+  const blackW = 26;
+  const blackH = 170;
+  return (
+    <g>
+      {Array.from({ length: whiteCount }).map((_, i) => (
+        <rect
+          key={`w-${i}`}
+          x={x0 + i * whiteW}
+          y={y0}
+          width={whiteW}
+          height={whiteH}
+          fill={ink}
+          stroke={paper}
+          strokeWidth={0.9}
+        />
+      ))}
+      {blackAfter.map((i) => (
+        <rect
+          key={`b-${i}`}
+          x={x0 + (i + 1) * whiteW - blackW / 2}
+          y={y0}
+          width={blackW}
+          height={blackH}
+          fill={paper}
+        />
+      ))}
+    </g>
+  );
+}
+
+function Steps() {
+  const count = 7;
+  const barW = 32;
+  const gap = 14;
+  const baseH = 36;
+  const stepH = 28;
+  const totalW = count * barW + (count - 1) * gap;
+  const x0 = (400 - totalW) / 2;
+  const baseY = 420;
+  return (
+    <g fill="none" stroke={paper}>
+      <line x1={20} y1={baseY} x2={380} y2={baseY} strokeWidth={0.6} opacity={0.7} />
+      {Array.from({ length: count }).map((_, i) => {
+        const h = baseH + i * stepH;
+        const x = x0 + i * (barW + gap);
+        return (
+          <rect
+            key={i}
+            x={x}
+            y={baseY - h}
+            width={barW}
+            height={h}
+            strokeWidth={0.7}
+            opacity={0.85}
+          />
+        );
+      })}
+      <line
+        x1={x0 + barW / 2}
+        y1={baseY - baseH}
+        x2={x0 + (count - 1) * (barW + gap) + barW / 2}
+        y2={baseY - (baseH + (count - 1) * stepH)}
+        strokeWidth={0.4}
+        strokeDasharray="2 4"
+        opacity={0.5}
+      />
+    </g>
+  );
+}
+
+function Radial() {
+  const cx = 200;
+  const cy = 250;
+  const r1 = 40;
+  const r2 = 90;
+  const r3 = 150;
+  const lines = 8;
+  return (
+    <g fill="none" stroke={paper}>
+      <circle cx={cx} cy={cy} r={r3} strokeWidth={0.5} opacity={0.4} />
+      <circle cx={cx} cy={cy} r={r2} strokeWidth={0.6} opacity={0.7} />
+      <circle cx={cx} cy={cy} r={r1} strokeWidth={0.8} />
+      {Array.from({ length: lines }).map((_, i) => {
+        const a = (i / lines) * Math.PI * 2;
+        const x1 = cx + Math.cos(a) * r1;
+        const y1 = cy + Math.sin(a) * r1;
+        const x2 = cx + Math.cos(a) * r3;
+        const y2 = cy + Math.sin(a) * r3;
+        return (
+          <line
+            key={i}
+            x1={x1}
+            y1={y1}
+            x2={x2}
+            y2={y2}
+            strokeWidth={0.6}
+            opacity={0.6}
+          />
+        );
+      })}
+      <g transform={`rotate(45 ${cx} ${cy})`} strokeWidth={0.6} opacity={0.5}>
+        <rect x={cx - 70} y={cy - 70} width={140} height={140} />
+      </g>
+      <circle cx={cx} cy={cy} r={3} fill={paper} stroke="none" />
+    </g>
+  );
+}
+
+function Cascade() {
+  const rows = 10;
+  const cols = 10;
+  const dx = 38;
+  const dy = 44;
+  const x0 = 30;
+  const y0 = 60;
+  return (
+    <g stroke={paper} strokeLinecap="square">
+      {Array.from({ length: rows }).flatMap((_, r) =>
+        Array.from({ length: cols }).map((_, c) => {
+          const offset = (r % 2) * (dx / 2);
+          const cxp = x0 + c * dx + offset;
+          const cyp = y0 + r * dy;
+          return (
+            <line
+              key={`${r}-${c}`}
+              x1={cxp - 7}
+              y1={cyp + 7}
+              x2={cxp + 7}
+              y2={cyp - 7}
+              strokeWidth={0.8}
+              opacity={0.55 + ((r + c) % 3) * 0.12}
+            />
+          );
+        })
+      )}
     </g>
   );
 }
