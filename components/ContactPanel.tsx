@@ -27,14 +27,17 @@ export default function ContactPanel({ className = "" }: { className?: string })
         <span className="col-span-12 md:col-span-2 caption text-[var(--color-muted)]">
           Email
         </span>
-        <div className="col-span-12 md:col-span-10">
+        <div className="col-span-12 md:col-span-10 min-w-0">
           <button
             type="button"
             onClick={copyEmail}
-            className="group block text-left"
+            className="group block text-left max-w-full"
             aria-label={`Copy email address ${profile.email} to clipboard`}
           >
-            <span className="text-h1 relative inline-block">
+            <span
+              className="relative inline-block max-w-full break-all font-bold leading-[1.05] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(1.5rem, 7vw, 4rem)" }}
+            >
               {profile.email}
               <span className="absolute left-0 -bottom-1 h-px w-full bg-current scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
             </span>

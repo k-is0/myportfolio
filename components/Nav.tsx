@@ -32,17 +32,24 @@ export default function Nav() {
   return (
     <nav
       aria-label="Primary"
-      className={`fixed inset-x-0 top-0 z-50 h-16 bg-[var(--color-paper)] transition-[border-color] duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 h-[var(--nav-height)] bg-[var(--color-paper)] transition-[border-color] duration-300 ${
         scrolled ? "border-b border-[var(--color-rule)]" : "border-b border-transparent"
       }`}
     >
-      <div className="flex h-full items-center justify-between px-[var(--edge-gutter)]">
+      <div
+        className="flex h-full items-center justify-between px-[var(--edge-gutter)]"
+        style={{ gap: "clamp(0.75rem, 4vw, 2.25rem)" }}
+      >
         <Link
           href="/"
           aria-label={`${profile.shortName} — home`}
-          className="group inline-flex items-center gap-2.5"
+          className="group inline-flex items-center shrink-0"
+          style={{ gap: "clamp(0.375rem, 1.4vw, 0.625rem)" }}
         >
-          <span className="font-bold tracking-[var(--tracking-wordmark)] text-[15px]">
+          <span
+            className="font-bold tracking-[var(--tracking-wordmark)]"
+            style={{ fontSize: "var(--wordmark-size)" }}
+          >
             {profile.shortName}
           </span>
           <PianoMark
@@ -52,7 +59,10 @@ export default function Nav() {
           />
         </Link>
 
-        <ul className="flex items-center gap-7 sm:gap-9">
+        <ul
+          className="flex items-center"
+          style={{ gap: "clamp(0.75rem, 3.2vw, 2.25rem)" }}
+        >
           {NAV_LINKS.map(({ href, label }) => {
             const active = isActive(href);
             return (

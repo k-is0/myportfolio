@@ -37,22 +37,22 @@ export default function IndexList({ projects, className = "" }: Props) {
             href={`/work/${p.slug}`}
             data-cursor="hover"
             aria-label={`${p.year} — ${p.title} — ${p.category}`}
-            className="group grid grid-cols-12 gap-4 items-baseline px-3 -mx-3 py-6 md:py-8 transition-colors duration-300 ease-out hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)]"
+            className="group grid grid-cols-12 gap-x-4 gap-y-2 md:gap-y-0 md:items-baseline px-3 -mx-3 py-5 md:py-8 transition-colors duration-300 ease-out hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)]"
           >
-            <span className="col-span-2 md:col-span-1 caption tabular-nums opacity-60 transition-opacity duration-300 group-hover:opacity-100">
+            <span className="col-span-11 md:col-span-1 caption tabular-nums opacity-60 transition-opacity duration-300 group-hover:opacity-100">
               {p.year}
-            </span>
-            <span className="col-span-7 md:col-span-7 text-h3 leading-tight">
-              {p.title}
-            </span>
-            <span className="col-span-2 md:col-span-3 caption opacity-60 transition-opacity duration-300 group-hover:opacity-100">
-              {p.category}
             </span>
             <span
               aria-hidden
-              className="col-span-1 text-right text-h3 opacity-60 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-1"
+              className="col-span-1 md:col-start-12 text-right text-h3 opacity-60 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-1"
             >
               ⟶
+            </span>
+            <span className="col-span-12 md:col-span-7 md:col-start-2 text-h3 leading-tight">
+              {p.title}
+            </span>
+            <span className="col-span-12 md:col-span-3 md:col-start-9 caption opacity-60 transition-opacity duration-300 group-hover:opacity-100">
+              {p.category}
             </span>
           </Link>
         </motion.li>

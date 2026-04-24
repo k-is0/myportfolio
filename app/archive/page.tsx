@@ -20,17 +20,17 @@ export default function IndexPage() {
       />
 
       <div className="mt-32 md:mt-40">
-        <div className="grid grid-cols-12 gap-4 pb-4 border-b border-[var(--color-ink)]">
+        <div className="grid grid-cols-12 gap-x-4 pb-4 border-b border-[var(--color-ink)]">
           <span className="col-span-2 md:col-span-1 caption text-[var(--color-muted)]">
             Year
           </span>
-          <span className="col-span-7 md:col-span-7 caption text-[var(--color-muted)]">
+          <span className="col-span-10 md:col-span-7 md:col-start-2 caption text-[var(--color-muted)]">
             Title
           </span>
-          <span className="col-span-2 md:col-span-3 caption text-[var(--color-muted)]">
+          <span className="hidden md:block md:col-span-3 md:col-start-9 caption text-[var(--color-muted)]">
             Discipline
           </span>
-          <span className="col-span-1 caption text-[var(--color-muted)] text-right">
+          <span className="hidden md:block md:col-start-12 caption text-[var(--color-muted)] text-right">
             Link
           </span>
         </div>
