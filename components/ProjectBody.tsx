@@ -57,6 +57,28 @@ export default function ProjectBody({
             </Reveal>
           );
         }
+        if (block.kind === "link") {
+          return (
+            <Reveal key={i} delay={Math.min(i * 0.05, 0.2)}>
+              <a
+                href={block.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-baseline gap-3 border-b border-[var(--color-ink)] pb-1 no-underline hover:opacity-60 transition-opacity"
+              >
+                <span className="text-body font-medium">{block.label}</span>
+                {block.description && (
+                  <span className="caption text-[var(--color-muted)]">
+                    {block.description}
+                  </span>
+                )}
+                <span className="caption text-[var(--color-muted)] group-hover:translate-x-1 transition-transform">
+                  ↗
+                </span>
+              </a>
+            </Reveal>
+          );
+        }
         return null;
       })}
     </div>

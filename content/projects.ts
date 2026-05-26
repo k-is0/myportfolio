@@ -69,6 +69,61 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "toshi-gesture-iot",
+    title: "TOSHI: Gesture-Controlled Smart Lighting",
+    year: 2025,
+    category: "Sensing / IoT",
+    descriptor:
+      "A wearable that reads forearm muscle activation and controls a smart lamp with a pinch, no screen, no voice, just signal.",
+    role: "Sole designer",
+    client: "Imperial College London — Dyson School",
+    tools: [
+      "ESP32",
+      "sEMG",
+      "MPU6050 IMU",
+      "Flask",
+      "Tuya Cloud API",
+      "Signal processing",
+    ],
+    cover: {
+      kind: "placeholder",
+      pattern: "pulse",
+      alt: "A hand-drawn waveform suggesting a bio-signal trace",
+    },
+    layout: { span: 5, aspect: "4 / 5" },
+    featured: true,
+    body: [
+      {
+        kind: "para",
+        text: "The premise is prosaic but the engineering is not. A forearm pinch gesture, read from surface EMG and fused with IMU orientation data, toggles a commercial smart lamp. The whole pipeline runs on a single ESP32: raw ADC at 33–50 Hz, a moving-average filter to suppress motion artefacts, an adaptive baseline tracker that follows physiological drift over a session, and a slope detector that distinguishes the fast rise of a deliberate pinch from the slow creep of postural tension.",
+      },
+      {
+        kind: "quote",
+        text: "EMG alone fires constantly. The IMU tells you whether to care.",
+      },
+      {
+        kind: "para",
+        text: "A rule-based multimodal classifier fuses EMG amplitude, slope, and gyro norm through an interaction-zone state machine. The system reaches READY only when the arm is correctly oriented and motion has settled below threshold. That gating, deliberately not machine learning, cut false positives to near zero across everyday activities like typing and reaching, with gesture-to-detection latency around 120–180 ms.",
+      },
+      {
+        kind: "para",
+        text: "Once a pinch is confirmed, the ESP32 fires an HTTP event to a local Flask gateway. The gateway logs structured gesture metadata; EMG amplitude, baseline, threshold, pitch, roll, gyro, lamp state, and issues an authenticated HTTPS command to the Tuya Cloud API. End-to-end actuation latency across the full chain ran 250-400 ms. Routing everything through the edge server keeps cloud authentication off the microcontroller and means gesture history survives a WiFi drop.",
+      },
+      {
+        kind: "link",
+        label: "Full report",
+        href: "/docs/toshi-sensing-iot-report.pdf",
+        description: "DESE71003 — Sensing and Internet of Things",
+      },
+      {
+        kind: "link",
+        label: "Coursework video",
+        href: "https://youtu.be/saRhsoMI104",
+        description: "End-to-end demo — sensing to actuation",
+      },
+    ],
+  },
+  {
     slug: "my-little-beacon",
     title: "My Little Beacon",
     year: 2025,
@@ -118,8 +173,8 @@ export const projects: Project[] = [
     tools: ["Figma", "Data visualisation", "User testing"],
     cover: {
       kind: "placeholder",
-      pattern: "pulse",
-      alt: "A hand-drawn waveform suggesting a bio-signal trace",
+      pattern: "rings",
+      alt: "Concentric rings suggesting bio-impedance measurement",
     },
     layout: { span: 5, aspect: "4 / 5" },
     featured: true,

@@ -40,7 +40,8 @@ export type ProjectBodyBlock =
       width: number;
       height: number;
       caption?: string;
-    };
+    }
+  | { kind: "link"; label: string; href: string; description?: string };
 
 export type Project = {
   slug: string;
